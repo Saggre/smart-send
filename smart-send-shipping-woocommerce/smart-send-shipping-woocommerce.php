@@ -150,7 +150,7 @@ class SS_Shipping_WC {
 		add_filter( 'plugin_action_links_' . SS_SHIPPING_PLUGIN_BASENAME, array( $this, 'plugin_action_links' ) );
 		add_filter( 'plugin_row_meta', array( $this, 'ss_shipping_plugin_row_meta'), 10, 2 );
 		
-		add_action( 'admin_enqueue_scripts', array( $this, 'ss_shipping_theme_enqueue_admin_styles') );
+		add_action( 'admin_enqueue_scripts', array( $this, 'ss_shipping_theme_enqueue_admin') );
         add_action( 'wp_enqueue_scripts', array( $this, 'ss_shipping_theme_enqueue_frontend_styles') );
 
 		add_filter( 'woocommerce_shipping_methods', array( $this, 'add_shipping_method' ) );
@@ -184,11 +184,14 @@ class SS_Shipping_WC {
 		load_plugin_textdomain( 'smart-send-shipping', false, dirname( plugin_basename(__FILE__) ) . '/lang/' );
 	}
 
-	/**
-	 * Load Admin CSS 
+	/*
+	 * Load Admin CSS and JavaScript
 	 */
-	public function ss_shipping_theme_enqueue_admin_styles() {
+	public function ss_shipping_theme_enqueue_admin() {
         wp_enqueue_style( 'ss-shipping-admin-css', SS_SHIPPING_PLUGIN_DIR_URL . '/assets/css/ss-shipping-admin.css' );
+        wp_enqueue_script( 'smart-send-shipping-print-js', SS_SHIPPING_PLUGIN_DIR_URL . '/assets/js/ss-shipping-print.min.js', array('jquery') );
+        wp_enqueue_script( 'smart-send-shipping-browser-print-js', SS_SHIPPING_PLUGIN_DIR_URL . '/assets/js/BrowserPrint-1.0.4.min.js', array('jquery') );
+        wp_enqueue_script( 'smart-send-shipping-print-zebra-js', SS_SHIPPING_PLUGIN_DIR_URL . '/assets/js/ss-shipping-print-zebra.js', array('jquery') );
 	}
 
     /**
