@@ -106,6 +106,9 @@ jQuery(function ($) {
                             });
                         }
 
+                        // Print Dummy PNG
+                        printPdfOnZebra('https://woo.demo.smartsend.dk/wp-content/uploads/2018/09/Label-GLS-Test.png');
+
                     } else {
                         // Print error message
                         $('#ss-shipping-label-form').append('<div id="ss-shipping-error" class="error ss-meta-message"><strong>' + ss_label_data.unexpected_error + '</strong></div>');
