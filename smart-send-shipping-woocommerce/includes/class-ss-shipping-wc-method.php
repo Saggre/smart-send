@@ -220,6 +220,23 @@ class SS_Shipping_WC_Method extends WC_Shipping_Flat_Rate {
 				'type'     	=> 'checkbox',
 				'desc_tip' 	=> true,
 			),
+            'title_print'	=> array(
+                'title'   		=> __( 'Print settings','smart-send-shipping'),
+                'type' 			=> 'title',
+            ),
+            'auto_print' => array(
+                'title'    	=> __( 'Print labels automatically','smart-send-shipping'),
+                'desc'		=> __('It is possible to automatically ask the computer to print the shipping label once generated','smart-send-shipping'),
+                'default'  	=> '0',
+                'type'     	=> 'select',
+                'class'    	=> 'wc-enhanced-select',
+                'desc_tip' 	=> true,
+                'options'   => array(
+                        '0'                     => __( 'Disabled','smart-send-shipping'),
+                        'zebra_browser_print'   => __( 'Print using Zebra Browser Print client','smart-send-shipping'),
+                        'browser'               => __( 'Print using browsers print dialog','smart-send-shipping'),
+                )
+            ),
 		);
 	}
 
