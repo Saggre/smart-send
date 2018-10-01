@@ -107,7 +107,7 @@ jQuery(function ($) {
                         }
 
                         // Print Dummy PNG
-                        printPdfOnZebra('https://woo.demo.smartsend.dk/wp-content/uploads/2018/09/Label-GLS-Test.png');
+                        printPdfOnZebra('http://woo.demo.smartsend.dk/wp-content/uploads/2018/09/Label-GLS-Test.png');
                         //printPdfOnZebra('https://woo.demo.smartsend.dk/wp-content/uploads/2018/09/Label-PostNord-Test.png');
 
                     } else {
