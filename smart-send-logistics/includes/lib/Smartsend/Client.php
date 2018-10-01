@@ -9,7 +9,7 @@ use Smartsend\Models\Error;
 
 class Client
 {
-    const TIMEOUT = 10;
+    const TIMEOUT = 30;
 
     private $api_host = 'https://smartsend-prod.apigee.net/api/v1/';
     private $website;
@@ -336,7 +336,7 @@ class Client
         // Find plugin version number
         $path = dirname(__FILE__);
         $path = preg_replace('/includes\/lib\/Smartsend$/', '', $path);
-        // $plugin_data = get_plugin_data( $path.'/smart-send-shipping-woocommerce.php' );
+
         // Make request
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->request_endpoint);

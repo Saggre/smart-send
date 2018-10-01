@@ -5,9 +5,9 @@
  * Description: Smart Send Shipping for WooCommerce
  * Author: Smart Send ApS
  * Author URI: http://www.smartsend.io
- * Version: 8.0.0b8
+ * Version: 8.0.0b9
  * WC requires at least: 2.6.0
- * WC tested up to: 3.4
+ * WC tested up to: 3.5
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -374,7 +374,7 @@ class SS_Shipping_WC {
 			if( ! empty( $ss_shipping_settings['api_token'] ) ) {
 				// Initiate an API handle with the login credentials.
                 $demo_mode = (!isset($ss_shipping_settings['demo']) || $ss_shipping_settings['demo'] == 'yes');//default is yes
-                $webshop_url = parse_url(get_site_url(),PHP_URL_HOST) . parse_url(get_site_url(),PHP_URL_PATH);
+                $webshop_url = parse_url(get_site_url(),PHP_URL_HOST);
                 $this->api_handle = new \Smartsend\Api( $ss_shipping_settings['api_token'], $webshop_url, $demo_mode );
 			} else {
 				return false;
