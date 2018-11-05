@@ -65,6 +65,8 @@ class SS_Shipping_WC_Method extends WC_Shipping_Flat_Rate {
                     'bring_commercialquarterpallet' => __('Bring: Commercial delivery of quarter size pallet (Business Pallet)', 'smart-send-logistics'),
                     'bring_express9'                => __('Bring: Express delivery before 9:00 (Express Nordic 09:00)', 'smart-send-logistics'),
                     'bring_bulkexpress9'            => __('Bring: Express delivery before 9:00, send as bulk (Express Nordic 09:00 Bulk)', 'smart-send-logistics'),
+                    'bring_valuemailuntracked'      => __('Bring: Untracked mail (Mailbox without tracking)', 'smart-send-logistics'),
+                    'bring_valuemailtracked'        => __('Bring: Tracked mail (Mailbox with tracking)', 'smart-send-logistics'),
                 ),
             'Bifrost Logistics' =>
                 array(
