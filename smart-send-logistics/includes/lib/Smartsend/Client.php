@@ -350,6 +350,8 @@ class Client
      */
     private function makeRequest($http_verb, $method, $args = array(), $headers=array(), $body=null, $timeout = self::TIMEOUT)
     {
+        $body = apply_filters('smart_send_request_body', $body, $method, $args);
+
         // If the headers where not set, then use default
         if (empty($headers)) {
             $headers = array(
